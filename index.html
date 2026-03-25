@@ -12,11 +12,11 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WindowServe | Premium Window Treatments</title>
+  <title>515 Windows — A WindowServe Brand | Des Moines</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --color-ink: #1a1814;
@@ -30,6 +30,7 @@
       --color-white: #ffffff;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', -apple-system, sans-serif;
+      --font-wordmark: 'Bebas Neue', 'Arial Narrow', 'Helvetica Condensed', sans-serif;
       --shadow-soft: 0 4px 24px rgba(26, 24, 20, 0.08);
       --shadow-lift: 0 12px 48px rgba(26, 24, 20, 0.12);
       --radius: 6px;
@@ -158,6 +159,18 @@
       vertical-align: middle;
     }
 
+    /* All-caps 515 WINDOWS — condensed display wordmark */
+    .brand-515-wordmark {
+      font-family: var(--font-wordmark);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      font-size: 1.35em;
+      line-height: 1;
+      /* Even vertical padding so digits aren’t pushed down in the pill */
+      padding: 0.1em 0.48em;
+      text-transform: uppercase;
+    }
+
     /* 515-WINDOWS — same typography as surrounding text */
     .brand-515-mnemonic {
       font-family: inherit;
@@ -170,8 +183,35 @@
       vertical-align: baseline;
     }
 
+    /* inline-flex .btn can swallow space before span; use margin for a clear gap */
     .btn .brand-515-mnemonic {
       margin-left: 0.35em;
+    }
+
+    .hero-sub-brand .brand-515 {
+      color: var(--color-ink) !important;
+      font-size: 1.05em;
+    }
+
+    /* Hero headline — teal wordmark, no heavy box (readable on photo via soft halo) */
+    .hero-515 h1 .brand-515 {
+      display: inline;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--color-teal);
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      box-shadow: none;
+      align-self: baseline;
+      vertical-align: baseline;
+      line-height: inherit;
+      letter-spacing: inherit;
+      text-shadow:
+        0 0 28px rgba(245, 240, 232, 0.95),
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 1px 3px rgba(26, 24, 20, 0.15);
     }
 
     .footer .nav-brand-link.brand-515 {
@@ -194,11 +234,66 @@
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 1px 6px rgba(0, 0, 0, 0.15);
     }
 
+    /* Bebas Neue has a tall line-box — less padding below caps inside the pill */
+    .cta h2 .brand-515-wordmark {
+      line-height: 0.82;
+      padding: 0.06em 0.45em 0.015em;
+    }
+
     .footer-bottom .brand-515 {
       color: var(--color-cream);
       background: rgba(0, 0, 0, 0.28);
       border-color: rgba(232, 224, 212, 0.4);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Inline WindowServe logo (replaces wordmark text) */
+    .ws-inline-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      vertical-align: middle;
+      margin: 0 0.12em;
+      line-height: 0;
+    }
+
+    .ws-inline-logo .logo-wrap {
+      gap: 0;
+    }
+
+    .ws-inline-logo .logo-icon {
+      height: 1.05em;
+      width: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .ws-inline-logo .logo {
+      height: 1.3em;
+      width: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .hero-sub-brand .ws-inline-logo .logo-icon {
+      height: 1.43em;
+    }
+
+    .hero-sub-brand .ws-inline-logo .logo {
+      height: 1.73em;
+    }
+
+    .footer-bottom .ws-inline-logo .logo-icon,
+    .footer-bottom .ws-inline-logo .logo {
+      filter: invert(1);
+      mix-blend-mode: lighten;
+      opacity: 0.92;
+    }
+
+    .footer-bottom .ws-inline-logo .logo-icon {
+      height: 0.9em;
+    }
+
+    .footer-bottom .ws-inline-logo .logo {
+      height: 1.05em;
     }
 
     .btn {
@@ -278,9 +373,36 @@
       letter-spacing: -0.02em;
     }
 
+    /* One baseline for headline + wordmark (avoids inline-flex vertical misalignment) */
+    .hero-515 h1 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+      column-gap: 0.22em;
+      row-gap: 0.12em;
+      text-align: center;
+    }
+
     .hero h1 em {
       font-style: italic;
       color: var(--color-teal);
+    }
+
+    .hero-sub-brand {
+      font-family: var(--font-display) !important;
+      font-size: clamp(1.2rem, 3vw, 1.5rem) !important;
+      font-weight: 600 !important;
+      font-style: italic !important;
+      color: var(--color-accent) !important;
+      letter-spacing: 0.04em !important;
+      line-height: 1.35 !important;
+      margin: 0 auto 1.75rem !important;
+      padding: 0.85rem 1.5rem !important;
+      max-width: 38rem !important;
+      border-top: 1px solid rgba(139, 115, 85, 0.45);
+      border-bottom: 1px solid rgba(139, 115, 85, 0.45);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
     }
 
     .hero p {
@@ -392,32 +514,6 @@
       font-size: 0.95rem;
     }
 
-    /* About Section */
-    .about {
-      padding: 5rem 1.5rem;
-      background: var(--color-sand);
-    }
-
-    .about-inner {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 600;
-      color: var(--color-ink);
-      margin-bottom: 1rem;
-    }
-
-    .about p {
-      font-size: 1.1rem;
-      color: var(--color-stone);
-      line-height: 1.7;
-    }
-
     /* CTA Section */
     .cta {
       padding: 5rem 1.5rem;
@@ -431,6 +527,13 @@
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 600;
       margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      column-gap: 0.22em;
+      row-gap: 0.2em;
+      text-align: center;
     }
 
     .cta p {
@@ -440,14 +543,14 @@
     }
 
     .cta-phone {
-      margin-bottom: 1rem !important;
+      margin-bottom: 1.5rem !important;
     }
 
     .cta-phone a {
       color: var(--color-cream);
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       transition: opacity 0.2s ease;
     }
 
@@ -546,6 +649,10 @@
       opacity: 0.8;
     }
 
+    .footer-bottom a {
+      color: var(--color-sand);
+    }
+
     /* Mobile nav toggle */
     .nav-toggle {
       display: none;
@@ -610,7 +717,7 @@
 <body>
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo-link">
+      <a href="https://windowserve.com" class="logo-link">
         <span class="logo-wrap">
           <img src="logo_icon.svg" alt="" class="logo-icon" aria-hidden="true">
           <img src="logo.svg" alt="WindowServe" class="logo">
@@ -618,8 +725,7 @@
       </a>
       <nav class="nav" id="nav">
         <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="515-windows.html" class="nav-brand-link brand-515">515 Windows</a>
+        <a href="https://windowserve.com#about">About</a>
         <a href="#contact">Contact</a>
         <a href="tel:5159463667" class="nav-phone">📞 Call <span class="brand-515-mnemonic">515-WINDOWS</span></a>
         <a href="#contact">Free Quote</a>
@@ -635,13 +741,13 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero hero-515">
       <div class="hero-inner">
-        <h1>Transform Your Space with <em>Beautiful</em> Window Treatments</h1>
-        <p>Custom blinds, shades, and shutters crafted for your home. Expert installation, premium materials, and timeless style—all in one place.</p>
+        <h1>Des Moines Calls Us <span class="brand-515">515 Windows</span></h1>
+        <p class="hero-sub-brand">Des Moines' own <span class="brand-515">515 Windows</span> — A <a href="https://windowserve.com" class="ws-inline-logo" target="_blank" rel="noopener noreferrer"><span class="logo-wrap"><img src="logo_icon.svg" alt="" class="logo-icon" aria-hidden="true"><img src="logo.svg" alt="WindowServe" class="logo"></span></a> Brand</p>
         <div class="hero-buttons">
-          <a href="#services" class="btn btn-primary">Explore Services</a>
-          <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
+          <a href="#services" class="btn btn-primary">Our Services</a>
+          <a href="tel:5159463667" class="btn btn-outline">Call<span class="brand-515-mnemonic">515-WINDOWS</span></a>
         </div>
       </div>
     </section>
@@ -675,31 +781,20 @@
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="about-inner">
-        <h2>About Us</h2>
-        <p>Locally known as <span class="brand-515">515 Windows</span> — A WindowServe Brand — we're a Des Moines based window treatment business proud to serve the metro area. Call us at <span class="brand-515-mnemonic">515-WINDOWS</span> and we'll bring personalized service, expert installation, and premium products right to your doorstep — because your home deserves the best.</p>
-      </div>
-    </section>
-
     <section class="cta" id="contact">
-      <h2>Ready to Love Your Windows?</h2>
-      <p>Schedule a free in-home consultation. We'll measure, advise, and bring samples—no obligation.</p>
-      <p class="cta-phone"><a href="tel:5159463667">📞 Call <span class="brand-515-mnemonic">515-WINDOWS</span>: (515) 946-3667</a></p>
-      <a href="mailto:quotes@WindowServe.com" class="btn btn-primary" style="background: var(--color-accent); border-color: var(--color-accent);">Email quotes@WindowServe.com</a>
+      <h2>Call <span class="brand-515 brand-515-wordmark">515-WINDOWS</span> Today</h2>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="logo-wrap footer-logo-wrap">
+      <a href="https://windowserve.com" class="logo-wrap footer-logo-wrap">
         <img src="logo_icon.svg" alt="" class="logo-icon footer-logo-icon" aria-hidden="true">
         <img src="logo.svg" alt="WindowServe" class="footer-logo">
-      </span>
+      </a>
       <nav>
         <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="515-windows.html" class="nav-brand-link brand-515">515 Windows</a>
+        <a href="https://windowserve.com#about">About</a>
         <a href="#contact">Contact</a>
         <div class="footer-social">
           <a href="https://www.facebook.com/windowserve/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -714,7 +809,7 @@
         </div>
       </nav>
     </div>
-    <p class="footer-bottom">© WindowServe Inc. | <span class="brand-515">515 Windows</span> is a WindowServe Brand<br>📞 <a href="tel:5159463667"><span class="brand-515-mnemonic">515-WINDOWS</span> (515-946-3667)</a> | Des Moines, Iowa</p>
+    <p class="footer-bottom"><span class="brand-515">515 Windows</span> is a <a href="https://windowserve.com" class="ws-inline-logo" target="_blank" rel="noopener noreferrer"><span class="logo-wrap"><img src="logo_icon.svg" alt="" class="logo-icon" aria-hidden="true"><img src="logo.svg" alt="WindowServe" class="logo"></span></a> Brand<br>📞 <a href="tel:5159463667"><span class="brand-515-mnemonic">515-WINDOWS</span> (515-946-3667)</a> | Des Moines, Iowa</p>
   </footer>
 
   <script>
@@ -724,6 +819,3 @@
   </script>
 </body>
 </html>
-
-
-
